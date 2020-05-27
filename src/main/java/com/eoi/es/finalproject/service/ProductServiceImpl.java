@@ -37,7 +37,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void updateProduct(Product product) {
-        this.repository.findById(product.getId());
+
         this.repository.save(product);
     }
 

@@ -44,7 +44,6 @@ public class ProductController {
     @PutMapping("product/{id}")
     public void updateProduct(@PathVariable String id) {
         Product product = service.getProductById(Integer.parseInt(id));
-        product.setCalificacion(0);
         service.createProduct(product);
 
     }
