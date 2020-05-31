@@ -1,11 +1,6 @@
 package com.eoi.es.finalproject.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,26 +17,21 @@ import lombok.ToString;
 @Table(name = "Compra")
 public class Order {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", unique = true)
-    private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID", unique = true)
+	private Integer id;
 
-    @Column
-    private Integer precio;
+	@Column
+	private Integer precio;
 
-    @Column
-    private Integer cantidadDeProductos;
+	@Column
+	private Integer cantidadDeProductos;
 
-    @Column
-    private String vendedor;
-
-    public Order(int id, Integer precio, Integer cantidadDeProductos) {
-        super();
-        this.id = id;
-
-        this.precio = precio;
-        this.cantidadDeProductos = cantidadDeProductos;
-    }
-
+	@Column
+	private String vendedor;
+	
+	@ManyToOne
+	@JoinColumn(name = "Buyer_id", referencedColumnName = "Buyer_id")
+	public Buyer buyer;
 }

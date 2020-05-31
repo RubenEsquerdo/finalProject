@@ -1,6 +1,6 @@
 package com.eoi.es.finalproject.entity;
 
-import lombok.AllArgsConstructor;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,7 +9,7 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @NoArgsConstructor
-@AllArgsConstructor
+
 @Entity
 @Table(name = "Productos")
 @Getter
@@ -41,4 +41,10 @@ public class Product {
 
     @Column
     private Boolean disponible;
+    
+    @ManyToOne
+	@JoinColumn(name = "id_vendedores")
+	public Seller seller;
+
+
 }

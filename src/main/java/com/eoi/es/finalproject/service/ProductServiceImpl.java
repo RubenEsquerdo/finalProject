@@ -26,8 +26,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void createProduct(Product product) {
-        this.repository.save(product);
+    public Product createProduct(Product product) {
+        return this.repository.save(product);
     }
 
     @Override
@@ -38,12 +38,9 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void updateProduct(Product product) {
 
-        this.repository.save(product);
+       this.repository.save(product);
+
     }
 
-    @Override
-    public void updateProduct2(Product product) {
-        this.repository.save(product);
-    }
 
 }

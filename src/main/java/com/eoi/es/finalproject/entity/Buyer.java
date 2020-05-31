@@ -1,41 +1,45 @@
 package com.eoi.es.finalproject.entity;
 
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.*;
-
-
-@ToString
 @Getter
 @Setter
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@ToString
 @Table(name = "Compradores")
 public class Buyer {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
-    private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "Buyer_id", unique = true)
+	private int id;
 
-    @Column
-    private String nombre;
+	@Column
+	private String nombre;
 
-    @Column
-    private Integer edad;
+	@Column
+	private Integer edad;
 
-    @Column
-    private Integer numeroDeCompras;
+	@Column
+	private Integer numeroDeCompras;
 
-    public Buyer(int id, String nombre, Integer edad, Integer numeroDeCompras) {
-        super();
-        this.id = id;
-        this.nombre = nombre;
-        this.edad = edad;
-        this.numeroDeCompras = numeroDeCompras;
-    }
+	
 
 }

@@ -10,11 +10,9 @@ public interface ProductService {
 
     public Product getProductById(int id);
 
-    public void createProduct(Product product);
+    public Product createProduct(Product product);
 
     public void deleteProduct(int id);
-
-    public void updateProduct2(Product product);
 
     public void updateProduct(Product product);
 
