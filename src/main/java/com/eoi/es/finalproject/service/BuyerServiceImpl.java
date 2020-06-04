@@ -22,7 +22,7 @@ public class BuyerServiceImpl implements BuyerService {
 	@Override
 	public Buyer getBuyerById(int id) {
 
-		return this.buyerRepository.findById(id).get();
+		return buyerRepository.findById(id).get();
 	}
 
 	@Override

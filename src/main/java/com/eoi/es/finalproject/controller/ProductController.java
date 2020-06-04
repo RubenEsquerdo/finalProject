@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin (origins = "http://localhost:4200")
 @RestController
 public class ProductController {
 
@@ -28,6 +29,7 @@ public class ProductController {
 
     @PostMapping("/product")
     public Product createProduct(@RequestBody Product product) {
+
         return service.createProduct(product);
 
 
@@ -40,8 +42,9 @@ public class ProductController {
 
     @PutMapping("/product/{id}")
     public void updateProduct(@RequestBody Product product , @PathVariable String id) {
-
-        this.service.updateProduct(product);
+        Product product1 = service.getProductById(Integer.parseInt(id));
+        product1.setCantidad(product.getCantidad());
+        service.createProduct(product);
     }
 
 

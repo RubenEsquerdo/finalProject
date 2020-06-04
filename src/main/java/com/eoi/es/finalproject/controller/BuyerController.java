@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin (origins = "http://localhost:4200")
 @RestController
 public class BuyerController {
 
@@ -44,9 +44,10 @@ public class BuyerController {
     @PutMapping("/buyer/{id}")
     public Buyer updateBuyer(@PathVariable int id, @RequestBody Buyer buyer) {
 
-//        Buyer updatebuyer = buyerservice.getBuyerById(id)
+
+//        Buyer updatebuyer = buyerservice.getBuyerById(id); 	
 //                .map(buyer1 -> {
-//                    buyer1.setNombre(buyer.getNombre());
+//                    buyer1.setId(buyer.getNombre());
 //                    buyer1.setEdad(buyer.getEdad());
 //                    buyer1.setnumeroDeCompras(buyer.getNumeroDeCompras());
 //                    
@@ -54,10 +55,8 @@ public class BuyerController {
 //                    
 //
 //        });
-
-
-
-
+//
+//
         return buyerservice.updateBuyer(buyer);
 
     }
