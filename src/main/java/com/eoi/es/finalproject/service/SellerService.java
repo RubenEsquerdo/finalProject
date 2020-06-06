@@ -16,4 +16,6 @@ public interface SellerService {
 
     public void deleteSeller(int id);
 
+    public Seller createSeller(Seller seller);
+
 }

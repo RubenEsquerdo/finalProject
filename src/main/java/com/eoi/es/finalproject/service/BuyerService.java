@@ -16,4 +16,6 @@ public interface BuyerService {
     public Buyer createBuyer(Buyer buyer);
 
     public Buyer updateBuyer(Buyer buyer);
+
+    public Buyer añadirOrder(int id_buyer, int id_order);
 }

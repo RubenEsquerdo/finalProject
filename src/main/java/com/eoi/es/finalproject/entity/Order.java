@@ -1,12 +1,8 @@
 package com.eoi.es.finalproject.entity;
 
-import javax.persistence.*;
+import lombok.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import javax.persistence.*;
 
 @ToString
 @Getter
@@ -28,10 +24,7 @@ public class Order {
 	@Column
 	private Integer cantidadDeProductos;
 
-	@Column
-	private String vendedor;
-	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "Buyer_id", referencedColumnName = "Buyer_id")
 	public Buyer buyer;
 }

@@ -1,21 +1,9 @@
 package com.eoi.es.finalproject.entity;
 
+import lombok.*;
+
+import javax.persistence.*;
 import java.util.List;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 @Getter
 @Setter
@@ -27,7 +15,7 @@ import lombok.ToString;
 public class Buyer {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "Buyer_id", unique = true)
 	private int id;
 
@@ -40,6 +28,7 @@ public class Buyer {
 	@Column
 	private Integer numeroDeCompras;
 
-	
+	@OneToMany(fetch = FetchType.LAZY)
+	List<Order> orders;
 
 }

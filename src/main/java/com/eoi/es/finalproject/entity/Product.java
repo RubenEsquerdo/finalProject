@@ -1,15 +1,12 @@
 package com.eoi.es.finalproject.entity;
 
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
 @NoArgsConstructor
-
+@AllArgsConstructor
 @Entity
 @Table(name = "Productos")
 @Getter
@@ -18,14 +15,14 @@ import javax.persistence.*;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "nombre")
-    private String name;
+    @Column
+    private String nombre;
 
     @Column
-    private String description;
+    private String descripcion;
 
     @Column
     private Integer precio;

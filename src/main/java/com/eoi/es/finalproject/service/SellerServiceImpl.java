@@ -35,4 +35,9 @@ public class SellerServiceImpl implements SellerService {
     public void deleteSeller(int id) {
         sellerRepository.deleteById(id);
     }
+
+    @Override
+    public Seller createSeller(Seller seller) {
+        return sellerRepository.save(seller);
+    }
 }

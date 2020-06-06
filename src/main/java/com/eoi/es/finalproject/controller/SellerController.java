@@ -31,6 +31,11 @@ public class SellerController {
          sellerService.deleteSeller(Integer.parseInt(id));
     }
 
+    @PostMapping("/seller")
+    public Seller createSeller(@RequestBody Seller seller){
+        return sellerService.createSeller(seller);
+    }
+
     @PutMapping("/seller/{id}")
     public Seller updateSeller(@RequestBody Seller seller, @PathVariable String id)
     {
